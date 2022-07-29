@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import logo from './images/logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+
+//component
+import Dashbord from './component/pages/dashbord';
+import WeatherNow from './component/weatherNow';
+import MenuMobile from './component/menuMobile';
+
 
 function App() {
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 768px)"
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {isDesktop && 
+        <WeatherNow/>
+      }
+      {!isDesktop &&
+        <MenuMobile/>
+      }
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Dashbord />}>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

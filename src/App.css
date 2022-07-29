@@ -1,38 +1,563 @@
+a {
+  text-decoration: unset;
+}
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Main {
+  padding-top: 50px;
+}
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+p {
+  font-size: 20;
+  font-weight: 500;
+}
+.WeatherNow {
+  position:fixed;
+  top: 20%;
+  left: 0px;
+  border-radius: 0 25px 25px 0;
+  background: radial-gradient(circle, #5374E7 0%, #77B9F5 100%);
+  box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+  min-width: 140px;
+  z-index: 10;
+  color: white;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.WeatherNow h5 {
+  margin-left: 21px;
+  margin-bottom: 33px;
+  font-size: 50px;
+  font-weight: 700;
+}
+.Table {
+  display:table;
+  width: 100%;
+  min-height: 280px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.CenterDiv {
+  display:table-cell;
+  vertical-align:middle
+}
+.WeatherNow .Table {
+  min-height: 280px;
+}
+
+.BoxTitle{
+  margin-bottom: 20px;
+}
+.BoxTitle h3 {
+  color: #01175F;
+  font-size: 28px;
+  font-weight: 600;
+  padding-left: 24px;
+}
+
+.BoxCity {
+  background-position: right;
+  width: 100%;
+  min-height: 440px;
+  box-shadow: 5px 10px 20px 0 rgb(0 0 0 / 50%);
+  border-radius: 25px;
+  background-size: cover;
+  position: relative;
+  overflow: auto;
+  margin-bottom: 23px;
+}
+.BoxCity .Weather {
+  font-weight: 300;
+}
+.Layer{
+  position: absolute;
+  top:0px;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff52;
+  padding: 70px 140px;
+}
+.BoxCity .Layer * {
+  color:#01175F
+}
+
+.ListingCity {
+  overflow-y: auto;
+  height: 465px;
+  padding: 0px 20px;
+  margin-bottom: 20px;
+}
+.AddCity {
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.AddCity .Table {
+  min-height: 64px;
+}
+.AddCity h4 {
+  display: inline-block ;
+  position: relative;
+  top: 2px;
+  color: #01175F;
+  font-size: 20px;
+  font-weight: 600;
+   margin-left: 15px;
+   
+}
+.ButtonCity {
+  margin-bottom: 30px;
+  border-radius: 25px;
+  box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+  overflow: hidden;
+  padding:20px 20px;
+  background: radial-gradient(circle, #011354 0%, #5B9FE3 100%);
+
+}
+.ButtonCity * {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.ButtonCity h4 {
+  font-size: 26px;
+  font-weight: 600;
+}
+.ButtonCity p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.ButtonCity .Date {
+  font-size: 12px;
+  line-height: 0px;
+  font-weight: 300;
+}
+.ButtonCity .Table {
+  min-height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.ButtonCity h5 {
+  text-align: right;
+  font-size: 50px;
+  font-weight: bold;
+
+}
+
+.BoxSearch {
+  position: relative;
+  margin-bottom: 40px;
+  min-height: 140px;
+  width: 100%;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+
+}
+.BoxSearch .Table {
+  min-height: 140px;
+}
+input {
+  width: 100%;
+  outline: unset;
+  padding-left: 40px;
+  padding-right: 66px;
+  border: 0px;
+  color: #B8B8B8;
+  font-size: 28px;
+  font-weight: 600;
+}
+.BoxSearch button {
+  border-radius: 25px;
+  background: radial-gradient(circle, #5374E7 0%, #77B9F5 100%);
+  width: 56px;
+  position: absolute;
+  height: 100%;
+  right: 0px;
+  text-align: center;
+  top: 0px;
+  border: 0px;
+}
+.BoxLocation { 
+  text-align: center;
+  border-radius: 25px;
+  background: radial-gradient(circle, #5374E7 0%, #77B9F5 100%);
+}
+.BoxLocation .Table {
+  min-height: 140px;
+}
+.BoxLocation h4 {
+  color: #FFFFFF;
+  font-size: 28px;
+  font-weight: 600;
+}
+.BoxLocation img {
+  max-height: 34px;
+  margin-bottom: 13px;
+}
+
+.clickButton {
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.clickButton:hover {
+  opacity: 0.7;
+}
+
+
+.marginNegative {
+  margin:0px -20px
+}
+
+.BoxToday {
+  padding: 40px;
+  width: 100%;
+  height: 370px;
+  border-radius: 35px;
+  background: radial-gradient(circle, #5374E7 0%, #77B9F5 100%);
+  box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+  overflow-y: auto;
+}
+.BoxToday .ListngToday {
+  min-height: 100px;
+  position: relative;
+}
+.BoxToday .centerLice{
+  position: absolute;
+  top: 33px;
+  height: 100%;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+}
+.BoxToday .line {
+  display: inline-block;
+  height: 100%;
+  width: 8px;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0) 100%);
+}
+
+.BoxTodayMobile {
+  padding: 40px;
+  width: 100%;
+  overflow-x: auto;
+}
+.BoxTodayMobile .ListngToday {
+  height: 110px;
+  position: relative;
+  width: max-content;
+}
+.BoxTodayMobile .centerLice{
+  position: absolute;
+  top: 35px;
+  height: 100%;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+}
+.BoxTodayMobile .line {
+  display: inline-block;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, #FFFFFF 0%, rgba(255,255,255,0) 100%);
+}
+.Grassetto {
+  font-weight: bold !important;
+}
+.BoxTodayMobile .RowToday {
+  float: left;
+  width: 120px;
+}
+.BoxTodayMobile .RowToday p,.BoxTodayMobile .RowToday h4  {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.Point {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  border-radius: 50px;
+  background-color: #FFFFFF;
+}
+.RowToday.Now .Point {
+  height: 30px;
+  width: 30px;
+}
+.BoxTodayMobile .RowToday .Point {
+  display: block;
+  margin-bottom: 20px;
+  height: 15px;
+  width: 15px;
+  margin-top: 12px;
+}
+.BoxTodayMobile .RowToday.Now .Point {
+  width: 25px;
+  height: 25px;
+  margin-top: 6.5px;
+  margin-bottom: 11px;
+}
+.nowTitle {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 27px;
+  text-align: center;
+}
+.RowToday h4 {
+  color: #FFFFFF;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: right;
+}
+.RowToday p {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  position: relative;
+  top: -7px;
+}
+.RowToday.Now h4{
+  font-size: 40px;
+  margin-right: -18px;
+  font-weight: bold;
+}
+
+.BoxOtherDay ul{
+  height: 100%;
+  padding: 0px;
+  margin-bottom: 0px;
+  background-color: white;
+  border-radius: 25px 25px 0px 0px;
+  width: max-content;
+  overflow: hidden;
+  box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+
+} 
+.BoxOtherDay ul  li {
+  display: inline-block;
+  color: #01175F;
+  padding: 18px 25px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 42px;
+}
+.BoxOtherDay ul  li.active {
+  opacity: 1;
+  background: radial-gradient(circle, #5374E7 0%, #77B9F5 100%);
+  color: white;
+  border-radius: 25px 25px 0px 0px;
+}
+.BoxWeek {
+  background: radial-gradient(circle, #5374E7 0%, #77B9F5 100%);
+  box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+  height: 370px;
+  display: none;
+  padding: 30px;
+  border-radius: 0px 25px 25px 25px;
+}
+.BoxMonth {
+  background: radial-gradient(circle, #5374E7 0%, #77B9F5 100%);
+  box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+  height: 370px;
+  padding: 30px;
+  display: none;
+  border-radius: 0px 25px 25px 25px;
+}
+.BoxWeek.active,.BoxMonth.active{
+  display: block;
+}
+
+.boxWeather {
+  text-align: center;
+  height: 290px;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.1);
+  box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+}
+.boxWeather .CenterDiv {
+  vertical-align: top;
+  padding-top: 30px;
+}
+.boxWeather h4 {
+  color: #FFFFFF;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-bottom: 37px;
+  
+}
+
+.boxWeather h5 {
+  color: #FFFFFF;
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.FirstColon,.SecondColon {
+  padding: 30px;
+  text-align: left;
+}
+
+.FirstColon h4 {
+  color: #FFFFFF;
+  font-size: 22px;
+  font-weight: 600;
+
+}
+.SecondColon h4 {
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: left;
+}
+.SecondColon p {
+  color: #FFFFFF;
+  font-weight: 100;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 27px;
+}
+.ContainerMenu {
+  position: fixed;
+  bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  z-index: 10;
+}
+
+.ContainerMenu .Menu {
+  margin: auto;
+  height: 78px;
+  width: 100%;
+  padding: 0px 20px;
+  max-width: 374px;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+}
+
+.voceMenu {
+  height: 54px;
+  display: block;
+}
+.voceMenu.active {
+  border-bottom: 3px solid;
+}
+
+.MobileDashbord {
+  background: linear-gradient(316.01deg, #77B9F5 0%, #5374E7 100%);
+  min-height: 100vh;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.TitleMobile * {
+  color: white;
+}
+.TitleMobile h4 {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+}
+.TitleMobile h5 {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.TitleMobile p {
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.Temp {
+  color: #FFFFFF;
+  font-size: 110px;
+  font-weight: bold;
+  line-height: 166px;
+  text-align: right;
+  margin-top: -40px;
+  margin-bottom: -20px;
+}
+@media(max-width:800px) {
+ 
+  .ListingCity {
+    overflow: unset;
+    height: auto;
+    margin-bottom: 0px;
   }
-  to {
-    transform: rotate(360deg);
+  .Main {
+    padding-top: 20px;
+    padding-bottom: 20vh;
   }
+  .boxWeather {
+    height: 232px;
+    min-height: 232px;
+  }
+  .boxWeather h4 {
+    margin-bottom: 10px;
+  }
+  .boxWeather h5 {
+    margin-bottom: 15px;
+    font-size: 36px;
+  }
+  .marginNegative {
+    margin: 0px;
+  }
+  .BoxSearch .Table,.BoxSearch {
+    min-height: 80px;
+    margin-bottom: 180px;
+  } 
+}
+@media(max-width:1400px) {
+  .BoxOtherDay ul li {
+    font-size: 18px;
+  }
+}
+@media(min-width:990px) {
+  .text-lg-left {
+    text-align: left !important;
+  }
+}
+
+.bx-wrapper {
+  -moz-box-shadow: unset;
+  -webkit-box-shadow: unset;
+  box-shadow: unset;
+  border: 0;
+  background: transparent;
+}
+.react-slideshow-container {
+  height: 300px;
+}
+.react-slideshow-container .default-nav {
+  display: none;
+
+} 
+
+.each-slide {
+  padding: 20px;
+}
+.indicators {
+  margin:auto;
+}
+.BoxOtherDay .indicators {
+  background: transparent;
+  border-radius: 0px;
+}
+.react-slideshow-container+ul.indicators .each-slideshow-indicator:before{
+  background: white !important;
 }
