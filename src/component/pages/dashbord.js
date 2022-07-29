@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -24,7 +23,7 @@ function Dashbord() {
   });
 
   let citySelect = useSelector(state=>state.citySelect);
-  
+  const clickSearchMobile = useSelector(state=>state.clickSearchMobile);
   const cityStore = useSelector(state=>state.city);
   const citys = useSelector(state=>state.citys);
   const dispact = useDispatch();
@@ -69,7 +68,9 @@ function Dashbord() {
           <div>
             <ListingCity isDesktop={isDesktop} citys={citys}/>
             <div className="p-4 ">
-              <BoxSearch/>
+              {(clickSearchMobile) &&
+                <BoxSearch/>
+              }
             </div>
           </div>
         } 

@@ -73,6 +73,7 @@ export const UpdateSearch = (search) => async (dispatch) => {
 };
 
 
+
 export const UpdateCitySelect = (city) => async (dispatch) => {
     try {
         dispatch(UpdateCityselectStore(city));
@@ -80,6 +81,16 @@ export const UpdateCitySelect = (city) => async (dispatch) => {
       throw new Error(err);
     }
 };
+
+export const ClickSearchMobile = (value) => async (dispatch) => {
+    try {
+        dispatch(UpdateClickSearchMobile(value));
+    } catch (err) {
+      throw new Error(err);
+    }
+};
+
+
 
 export const UpdateLocation = (lat,long) => async (dispatch) => {
     try {
@@ -116,6 +127,14 @@ const UpdateSearchStore = (data) => {
 const UpdateCityselectStore = (data) => {
     return {
         type: "UPDATECITYSELECT",
+        payload: data
+    }
+        
+}
+
+const UpdateClickSearchMobile = (data) => {
+    return {
+        type: "UPDATECLIKSEARCHMOBILE",
         payload: data
     }
         
